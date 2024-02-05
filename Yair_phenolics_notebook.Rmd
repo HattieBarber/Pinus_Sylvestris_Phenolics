@@ -1,0 +1,28 @@
+---
+title: "Variation of needle phenolic content in Scots pine common garden trial"
+output: html_notebook
+#Trial overview: Seed from 21 native Scottish Scots pine populations were collected and reared in one of three nurseries: outdoors to the west (Inverewe; NW), outdoors to the east (Aberdeen; NE), and in a glasshouse to the east (Aberdeen; NG).After a few years, trees were transplanted to field sites in the west (Inverewe; FW), east (Glensaugh;FE), and south (Yair; FS). Here, we are only looking at trees from FS, all of which were raised in FG.
+read data
+```{r include = FALSE}
+library(readr)
+read.csv("Yair_Phenolics_Old_Complete.csv", header = TRUE)
+data<-read.csv("Yair_Phenolics_Old_Complete.csv")
+View(data)
+```
+character check
+```{r include = FALSE}
+str(data)
+data$OriginForest<-as.factor(data$OriginForest)
+```
+plot
+#This plot shows variation in total phenolic content, by origin zone/forest.
+```{r}
+library(ggplot2)
+ggplot(data, aes(x = OriginForest, y = Total_Phenolics_in_Plant_material.mg.g., colour = Zone)) +
+ geom_boxplot() + ggtitle("Total phenolic content by origin") +
+ theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1)) +
+ theme(plot.title = element_text(hjust = 0.5)) +
+ labs(y = "Total phenolic content mg/g", x = "Origin Forest", colour = "Zone") +
+  facet_wrap(~ Zone, scales = 'free_x')
+```
+ccc 
