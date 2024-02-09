@@ -2,8 +2,8 @@
 title: "Variation of needle phenolic content in Scots pine common garden trial"
 output: html_notebook
 #Trial overview: Seed from 21 native Scottish Scots pine populations were collected and reared in one of three nurseries: outdoors to the west (Inverewe; NW), outdoors to the east (Aberdeen; NE), and in a glasshouse to the east (Aberdeen; NG).After a few years, trees were transplanted to field sites in the west (Inverewe; FW), east (Glensaugh;FE), and south (Yair; FS). Here, we are only looking at trees from FS, all of which were raised in FG.
-read data
-```{r include = FALSE}
+
+```{r}
 setwd("C:/Users/hatbar/OneDrive - UKCEH/Documents/Pinus_Sylvestris_Phenolics/Pinus_Sylvestris_Phenolics")
 library(readr)
 read.csv("Yair_Phenolics_Old_Complete.csv", header = TRUE)
